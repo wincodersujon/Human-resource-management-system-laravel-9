@@ -46,22 +46,22 @@ class EmployeesController extends Controller
         $user->is_role  = 0;  //0 - Employees
         $user->save();
 
-        return redirect('admin/employees/')->with('success','Employees Successfully Register.');
+        return redirect('admin/employees/')->with('success', 'Employee Successfully Register.');
     }
     public function view($id)
     {
         $data['getRecord'] = User::find($id);
-      return view('backend.employees.view', $data);
+        return view('backend.employees.view', $data);
     }
     public function edit($id)
     {
         $data['getRecord'] = User::find($id);
-        return view('backend.employees.edit',$data);
+        return view('backend.employees.edit', $data);
     }
     public function update($id, Request $request)
     {
         $user = request()->validate([
-            'email' => 'required|unique:users,email,'.$id
+            'email' => 'required|unique:users,email,' . $id
         ]);
         $user = User::find($id);
         $user->name  = trim($request->name);
@@ -76,14 +76,18 @@ class EmployeesController extends Controller
         $user->department_id  = trim($request->department_id);
         $user->is_role  = 0;  //0 - Employees
         $user->save();
-        return redirect('admin/employees')->with('success', 'Employees Successfully Updated');
+        return redirect('admin/employees')->with('success', 'Employee Successfully Updated');
     }
     public function delete($id)
     {
-        $save = User::getSingle($id);
-        $save->is_delete = 1;
-        $save->save();
-        return redirect()->back()->with('success', 'Class Successfully Deleted');
+        $user = User::find($id);
+
+        if (!$user) {
+            return redirect()->back()->with('error', 'Employee not found');
+        }
+
+        $user->delete();
+
+        return redirect()->back()->with('success', 'Employee Successfully Deleted');
     }
 }
-

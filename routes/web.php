@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\EmployeesController;
+use App\Http\Controllers\JobsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,8 @@ Route::get('logout', [AuthController::class, 'logout']);
 // Admin || HR same
 Route::group(['middleware' => 'admin'], function(){
     Route::get('admin/dashboard', [DashboardController::class, 'dashboard']);
+
+    //Employees->search bar,reset,crud
     Route::get('admin/employees', [EmployeesController::class, 'index']);
     Route::get('admin/employees/add', [EmployeesController::class, 'add']);
     Route::post('admin/employees/add', [EmployeesController::class, 'add_post']);
@@ -35,5 +38,14 @@ Route::group(['middleware' => 'admin'], function(){
     Route::get('admin/employees/edit/{id}', [EmployeesController::class, 'edit']);
     Route::post('admin/employees/edit/{id}', [EmployeesController::class, 'update']);
     Route::get('admin/employees/delete/{id}', [EmployeesController::class, 'delete']);
+
+    //Job routes
+    Route::get('admin/jobs', [JobsController::class, 'index']);
+    Route::get('admin/jobs/add', [JobsController::class, 'add']);
+    Route::post('admin/jobs/add', [JobsController::class, 'add_post']);
+    Route::get('admin/jobs/view/{id}', [JobsController::class, 'view']);
+    Route::get('admin/jobs/edit/{id}', [JobsController::class, 'edit']);
+    Route::post('admin/jobs/edit/{id}', [JobsController::class, 'update']);
+    Route::get('admin/jobs/delete/{id}', [JobsController::class, 'delete']);
 });
 
