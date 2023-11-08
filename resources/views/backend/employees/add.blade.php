@@ -80,9 +80,9 @@
                                         <div class="col-sm-10">
                                            <select class="form-control" value="{{ old('job_id') }}" name="job_id" required>
                                             <option value="">Select Job Title</option>
-                                            <option value="1">Web Designer</option>
-                                            <option value="2">Web Developer</option>
-                                            <option value="3">MERN developer</option>
+                                            @foreach ($getJobs as $value)
+                                            <option value="{{ $value->id }}">{{ $value->job_title }}</option>
+                                            @endforeach
                                            </select>
                                         </div>
                                     </div>

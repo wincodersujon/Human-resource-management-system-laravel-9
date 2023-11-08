@@ -30,7 +30,7 @@ Route::get('logout', [AuthController::class, 'logout']);
 Route::group(['middleware' => 'admin'], function(){
     Route::get('admin/dashboard', [DashboardController::class, 'dashboard']);
 
-    //Employees->search bar,reset,crud
+    //Employees routes->search(find function model)bar,reset,crud
     Route::get('admin/employees', [EmployeesController::class, 'index']);
     Route::get('admin/employees/add', [EmployeesController::class, 'add']);
     Route::post('admin/employees/add', [EmployeesController::class, 'add_post']);
@@ -39,7 +39,7 @@ Route::group(['middleware' => 'admin'], function(){
     Route::post('admin/employees/edit/{id}', [EmployeesController::class, 'update']);
     Route::get('admin/employees/delete/{id}', [EmployeesController::class, 'delete']);
 
-    //Job routes
+    //Jobs routes->search(find function model)bar,reset,crud
     Route::get('admin/jobs', [JobsController::class, 'index']);
     Route::get('admin/jobs/add', [JobsController::class, 'add']);
     Route::post('admin/jobs/add', [JobsController::class, 'add_post']);

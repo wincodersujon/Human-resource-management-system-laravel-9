@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Jobs;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Validator;
@@ -16,7 +17,8 @@ class EmployeesController extends Controller
     }
     public function add()
     {
-        return view('backend.employees.add');
+        $data['getJobs'] = Jobs::get();
+        return view('backend.employees.add',$data);
     }
     public function add_post(Request $request)
     {
@@ -56,6 +58,7 @@ class EmployeesController extends Controller
     public function edit($id)
     {
         $data['getRecord'] = User::find($id);
+        $data['getJobs'] = Jobs::get();
         return view('backend.employees.edit', $data);
     }
     public function update($id, Request $request)
@@ -88,6 +91,6 @@ class EmployeesController extends Controller
 
         $user->delete();
 
-        return redirect()->back()->with('success', 'Employee Successfully Deleted');
+        return redirect()->back()->with('error', 'Employee Successfully Deleted');
     }
 }

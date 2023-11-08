@@ -84,7 +84,7 @@
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
-                                            {{ $getRecord->job_id }}
+                                            {{!empty($getRecord->get_job_single->job_title) ? $getRecord->get_job_single->job_title : ''}}
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -145,7 +145,7 @@
                                     </div>
                                     </div>
                                     <div class="card-footer">
-                                        <a href="{{ url('admin/employees') }}" class="btn btn-default">Back</a>
+                                        <a href="{{ url('admin/employees') }}" class="btn btn-warning">Back</a>
                                     </div>
                             </form>
                         </div>
