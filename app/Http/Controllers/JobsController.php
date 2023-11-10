@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Jobs;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\JobsExport;
 
 class JobsController extends Controller
 {
     public function index(Request $request)
     {
-        $data['getRecord'] = Jobs::getRecord();
+        $data['getRecord'] = Jobs::getRecord($request);
 
         return view('backend.jobs.list', $data);
     }
@@ -68,5 +70,10 @@ class JobsController extends Controller
         $user->delete();
 
         return redirect()->back()->with('error', 'Job Successfully Deleted');
+    }
+
+    public function jobs_export(Request $request)
+    {
+        return Excel::download(new JobsExport, 'jobs.xlsx');
     }
 }

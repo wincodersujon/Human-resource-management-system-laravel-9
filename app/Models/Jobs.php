@@ -12,7 +12,7 @@ class Jobs extends Model
 
     protected $guard = [];
 
-    static public function getRecord()
+    static public function getRecord($request)
     {
         $return = self::select('jobs.*');
         if(!empty(Request::get('id')))
@@ -31,7 +31,10 @@ class Jobs extends Model
         {
         $return = $return->where('max_salary','like','%' .Request::get('max_salary'));
         }
-
+        if(!empty(Request::get('start_date')) && !empty(Request::get('end_date')))
+        {
+        $return = $return->where('jobs.created_at','>=',Request::get('start_date'))->where('jobs.created_at','<=',Request::get('end_date'));
+        }
         $return = $return->orderBy('id', 'desc')
         ->paginate(10);
 

@@ -47,5 +47,12 @@ Route::group(['middleware' => 'admin'], function(){
     Route::get('admin/jobs/edit/{id}', [JobsController::class, 'edit']);
     Route::post('admin/jobs/edit/{id}', [JobsController::class, 'update']);
     Route::get('admin/jobs/delete/{id}', [JobsController::class, 'delete']);
+
+    /* I included the "maatwebsite/excel" package in the "config/app.php.
+    Within my project's "App" directory, I created an "Exports" folder and added a "JobsExports".
+    I made some modifications to the "list.blade.php" file in the "Jobs" model.
+    The "User," "Jobs" model, and "JobsController"*/
+    
+    Route::get('admin/jobs_export', [JobsController::class, 'jobs_export']);
 });
 
