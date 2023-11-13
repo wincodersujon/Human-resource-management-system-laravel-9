@@ -27,11 +27,11 @@ class JobsController extends Controller
             'max_salary' => 'required',
         ]);
 
-        $jobs  = new Jobs;
-        $jobs->job_title  = trim($request->job_title);
-        $jobs->min_salary  = trim($request->min_salary);
-        $jobs->max_salary  = trim($request->max_salary);
-        $jobs->save();
+        $user  = new Jobs;
+        $user->job_title  = trim($request->job_title);
+        $user->min_salary  = trim($request->min_salary);
+        $user->max_salary  = trim($request->max_salary);
+        $user->save();
 
         return redirect('admin/jobs/')->with('success', 'Job Successfully Created.');
     }
@@ -47,16 +47,16 @@ class JobsController extends Controller
     }
     public function update(Request $request,$id)
     {
-        $jobs = $request->validate([
+        $user = $request->validate([
             'job_title' => 'required',
             'min_salary' => 'required',
             'max_salary' => 'required'
         ]);
-        $jobs = jobs::find($id);
-        $jobs->job_title  = trim($request->job_title);
-        $jobs->min_salary  = trim($request->min_salary);
-        $jobs->max_salary  = trim($request->max_salary);
-        $jobs->save();
+        $user = jobs::find($id);
+        $user->job_title  = trim($request->job_title);
+        $user->min_salary  = trim($request->min_salary);
+        $user->max_salary  = trim($request->max_salary);
+        $user->save();
         return redirect('admin/jobs')->with('success', 'Job Successfully Updated');
     }
     public function delete($id)

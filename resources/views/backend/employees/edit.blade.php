@@ -32,7 +32,7 @@
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">First Name
+                                        <label class="col-sm-2 col-form-lable">First Name
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -40,7 +40,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Last Name
+                                        <label class="col-sm-2 col-form-lable">Last Name
                                             <span style="color:red;"></span>
                                         </label>
                                         <div class="col-sm-10">
@@ -48,7 +48,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Email ID
+                                        <label class="col-sm-2 col-form-lable">Email ID
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -57,7 +57,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Phone Number
+                                        <label class="col-sm-2 col-form-lable">Phone Number
                                             <span style="color:red;"></span>
                                         </label>
                                         <div class="col-sm-10">
@@ -66,7 +66,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Hire Date
+                                        <label class="col-sm-2 col-form-lable">Hire Date
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -74,7 +74,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable"> Job Title
+                                        <label class="col-sm-2 col-form-lable"> Job Title
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -86,7 +86,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable"> Salary
+                                        <label class="col-sm-2 col-form-lable"> Salary
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -95,7 +95,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable"> Commission PCT
+                                        <label class="col-sm-2 col-form-lable"> Commission PCT
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -104,7 +104,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable"> Manager Name
+                                        <label class="col-sm-2 col-form-lable"> Manager Name
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -116,7 +116,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable"> Departmet Name
+                                        <label class="col-sm-2 col-form-lable"> Departmet Name
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -127,18 +127,6 @@
                                            </select>
                                         </div>
                                     </div>
-                                    {{-- <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable"> Is Role
-                                            <span style="color:red;">*</span>
-                                        </label>
-                                        <div class="col-sm-10">
-                                           <select class="form-control" name="is_role" required>
-                                            <option value="">Select Role Type</option>
-                                            <option {{ ($getRecord->is_role ==0) ? 'selected' : '' }} value="0">User</option>
-                                            <option {{ ($getRecord->is_role ==1) ? 'selected' : '' }} value="1">Employees</option>
-                                           </select>
-                                        </div>
-                                    </div> --}}
                                 </div>
                                 <div class="card-footer">
                                     <a href="{{ url('admin/employees') }}" class="btn btn-warning">Back</a>

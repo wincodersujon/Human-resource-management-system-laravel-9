@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\EmployeesController;
 use App\Http\Controllers\JobsController;
+use App\Http\Controllers\JobsHistoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,7 +53,12 @@ Route::group(['middleware' => 'admin'], function(){
     Within my project's "App" directory, I created an "Exports" folder and added a "JobsExports".
     I made some modifications to the "list.blade.php" file in the "Jobs" model.
     The "User," "Jobs" model, and "JobsController"*/
-    
     Route::get('admin/jobs_export', [JobsController::class, 'jobs_export']);
+
+    //Job History
+    Route::get('admin/job_history', [JobsHistoryController::class, 'index']);
+    Route::get('admin/job_history/add', [JobsHistoryController::class, 'add']);
+    Route::post('admin/job_history/add', [JobsHistoryController::class, 'add_post']);
+
 });
 

@@ -32,7 +32,7 @@
 
                                 <div class="card-body">
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">ID
+                                        <label class="col-sm-2 col-form-lable">ID
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -40,7 +40,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Job Title
+                                        <label class="col-sm-2 col-form-lable">Job Title
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -48,7 +48,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Min Salary
+                                        <label class="col-sm-2 col-form-lable">Min Salary
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -56,7 +56,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Max Salary
+                                        <label class="col-sm-2 col-form-lable">Max Salary
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -64,7 +64,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Created Date
+                                        <label class="col-sm-2 col-form-lable">Created Date
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -72,7 +72,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Updated Date
+                                        <label class="col-sm-2 col-form-lable">Updated Date
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">

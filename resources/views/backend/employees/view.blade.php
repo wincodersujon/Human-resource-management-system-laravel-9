@@ -32,7 +32,7 @@
 
                                 <div class="card-body">
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">ID
+                                        <label class="col-sm-2 col-form-lable">ID
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -40,7 +40,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">First Name
+                                        <label class="col-sm-2 col-form-lable">First Name
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -48,7 +48,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Last Name
+                                        <label class="col-sm-2 col-form-lable">Last Name
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -56,7 +56,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Email
+                                        <label class="col-sm-2 col-form-lable">Email
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -64,7 +64,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Phone Number
+                                        <label class="col-sm-2 col-form-lable">Phone Number
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -72,7 +72,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Hire Date
+                                        <label class="col-sm-2 col-form-lable">Hire Date
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -80,7 +80,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Job ID
+                                        <label class="col-sm-2 col-form-lable">Job ID
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -88,7 +88,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Salary
+                                        <label class="col-sm-2 col-form-lable">Salary
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -96,7 +96,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Commission PCT
+                                        <label class="col-sm-2 col-form-lable">Commission PCT
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -104,7 +104,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Manager ID
+                                        <label class="col-sm-2 col-form-lable">Manager ID
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -112,7 +112,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Department ID
+                                        <label class="col-sm-2 col-form-lable">Department ID
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -120,7 +120,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Is Role
+                                        <label class="col-sm-2 col-form-lable">Is Role
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -128,7 +128,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Created Date
+                                        <label class="col-sm-2 col-form-lable">Created Date
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
@@ -136,7 +136,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-10 col-form-lable">Updated Date
+                                        <label class="col-sm-2 col-form-lable">Updated Date
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
