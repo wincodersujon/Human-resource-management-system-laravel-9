@@ -59,7 +59,7 @@
                                     </div>
                                 </div>
                             </form>
-
+                        </div>
                             @include('message')
                             <!-- /.card -->
 

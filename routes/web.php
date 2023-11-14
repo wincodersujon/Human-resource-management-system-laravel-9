@@ -55,7 +55,7 @@ Route::group(['middleware' => 'admin'], function(){
     The "User," "Jobs" model, and "JobsController"*/
     Route::get('admin/jobs_export', [JobsController::class, 'jobs_export']);
 
-    //Job History
+    //Job History->Join two more tables query you can see in JobsHistory.php model with search details.
     Route::get('admin/job_history', [JobsHistoryController::class, 'index']);
     Route::get('admin/job_history/add', [JobsHistoryController::class, 'add']);
     Route::post('admin/job_history/add', [JobsHistoryController::class, 'add_post']);
