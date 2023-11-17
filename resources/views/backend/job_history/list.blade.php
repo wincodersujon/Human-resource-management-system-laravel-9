@@ -11,6 +11,15 @@
                         <h1>Jobs History</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6" style="text-align: right">
+
+                        <form action="{{ url('admin/job_history_export') }}" method ="get">
+                            <input type="hidden" name="start_date" value="{{ request()->start_date }}">
+                            <input type="hidden" name="end_date" value="{{ request()->end_date }}">
+                            <a class="btn btn-success" href="{{ url('admin/job_history_export?start_date='.Request::get('start_date').
+                            '&end_date='.Request::get('end_date')) }}">Excel Export</a>
+
+                        </form><br>
+
                         <a href="{{ url('admin/job_history/add') }}" class="btn btn-primary"> Add Jobs History</a>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
