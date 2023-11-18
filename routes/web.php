@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\EmployeesController;
+use App\Http\Controllers\JobGradeController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\JobsHistoryController;
 use Illuminate\Support\Facades\Route;
@@ -65,5 +66,9 @@ Route::group(['middleware' => 'admin'], function(){
 
     Route::get('admin/job_history_export', [JobsHistoryController::class, 'job_history_export']);
 
+    //Job Grades
+    Route::get('admin/job_grades', [JobGradeController::class, 'index']);
+    Route::get('admin/job_grades/add', [JobGradeController::class, 'add']);
+    Route::post('admin/job_grades/add', [JobGradeController::class, 'add_post']);
 });
 
