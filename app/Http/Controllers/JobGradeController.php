@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 
 class JobGradeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('backend.job_grade.list');
+        $data['getRecord'] = JobGrade::getRecord($request);
+        return view('backend.job_grade.list',$data);
     }
     public function add(Request $request)
     {

@@ -36,7 +36,7 @@ class Jobs extends Model
         $return = $return->where('jobs.created_at','>=',Request::get('start_date'))->where('jobs.created_at','<=',Request::get('end_date'));
         }
         $return = $return->orderBy('id', 'desc')
-        ->paginate(10);
+        ->paginate(5);
 
         return $return;
     }
