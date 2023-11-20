@@ -98,14 +98,14 @@
                                                 <td>{{ $value->highest_salary }}</td>
                                                 <td>{{ date('d-m-Y', strtotime($value->created_at)) }}</td>
                                                 <td>{{ date('d-m-Y', strtotime($value->updated_at)) }}</td>
-                                                {{-- <td>
-                                                    <a href="{{ url('admin/job_grades/view/' .$value->id) }}"
-                                                        class="btn btn-info">View</a>
+                                                <td>
+                                                    {{-- <a href="{{ url('admin/job_grades/view/' .$value->id) }}"
+                                                        class="btn btn-info">View</a> --}}
                                                     <a href="{{ url('admin/job_grades/edit/'.$value->id) }}"
                                                         class="btn btn-primary">Edit</a>
                                                     <a href="{{ url('admin/job_grades/delete/'.$value->id) }}"
                                                         onclick="return confirm('Are you sure delete this job grade?')" class="btn btn-danger">Delete</a>
-                                                </td> --}}
+                                                </td>
                                             </tr>
                                             @empty
                                             <tr>
