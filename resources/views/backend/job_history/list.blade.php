@@ -89,6 +89,7 @@
                                             <th>Job Name(job_id)</th>
                                             <th>Department Name(department_id)</th>
                                             <th>Created At</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -111,8 +112,6 @@
                                                 </td>
                                                 <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
                                                 <td>
-                                                    {{-- <a href="{{ url('admin/job_history/view/' .$value->id) }}"
-                                                        class="btn btn-info">View</a> --}}
                                                     <a href="{{ url('admin/job_history/edit/'.$value->id) }}"
                                                         class="btn btn-primary">Edit</a>
                                                     <a href="{{ url('admin/job_history/delete/'.$value->id) }}"

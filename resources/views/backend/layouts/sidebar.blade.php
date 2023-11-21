@@ -98,6 +98,15 @@
                       </a>
                   </li>
                   <li class="nav-item">
+                    <a href="{{ url('admin/regions') }}"
+                        class="nav-link @if (Request::segment(2) == 'regions') active @endif">
+                        <i class="nav-icon fas fa-asterisk"></i>
+                        <p>
+                            Regions
+                        </p>
+                    </a>
+                </li>
+                  <li class="nav-item">
                       <a href="{{ url('admin/departments') }}"
                           class="nav-link @if (Request::segment(2) == 'departments') active @endif">
                           <i class="nav-icon fas fa-building"></i>
@@ -121,15 +130,6 @@
                           <i class="nav-icon fas fa-map-marker-alt"></i>
                           <p>
                               Locations
-                          </p>
-                      </a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="{{ url('admin/regions') }}"
-                          class="nav-link @if (Request::segment(2) == 'regions') active @endif">
-                          <i class="nav-icon fas fa-asterisk"></i>
-                          <p>
-                              Regions
                           </p>
                       </a>
                   </li>
