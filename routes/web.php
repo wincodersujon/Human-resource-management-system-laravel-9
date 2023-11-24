@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\EmployeesController;
+use App\Http\Controllers\CountryController;
 use App\Http\Controllers\JobGradeController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\JobsHistoryController;
@@ -82,6 +83,14 @@ Route::group(['middleware' => 'admin'], function(){
     Route::get('admin/regions/edit/{id}', [RegionController::class, 'edit']);
     Route::post('admin/regions/edit/{id}', [RegionController::class, 'update']);
     Route::get('admin/regions/delete/{id}', [RegionController::class, 'delete']);
+
+    //Countries
+    Route::get('admin/countries', [CountryController::class, 'index']);
+    Route::get('admin/countries/add', [CountryController::class, 'add']);
+    Route::post('admin/countries/add', [CountryController::class, 'add_post']);
+    Route::get('admin/countries/edit/{id}', [CountryController::class, 'edit']);
+    Route::post('admin/countries/edit/{id}', [CountryController::class, 'update']);
+    Route::get('admin/countries/delete/{id}', [CountryController::class, 'delete']);
 
 });
 

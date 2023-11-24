@@ -106,21 +106,21 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ url('admin/countries') }}"
+                        class="nav-link @if (Request::segment(2) == 'countries') active @endif">
+                        <i class="nav-icon fas fa-flag"></i>
+                        <p>
+                            Countries
+                        </p>
+                    </a>
+                </li>
                   <li class="nav-item">
                       <a href="{{ url('admin/departments') }}"
                           class="nav-link @if (Request::segment(2) == 'departments') active @endif">
                           <i class="nav-icon fas fa-building"></i>
                           <p>
                               Departments
-                          </p>
-                      </a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="{{ url('admin/countries') }}"
-                          class="nav-link @if (Request::segment(2) == 'countries') active @endif">
-                          <i class="nav-icon fas fa-flag"></i>
-                          <p>
-                              Countries
                           </p>
                       </a>
                   </li>
