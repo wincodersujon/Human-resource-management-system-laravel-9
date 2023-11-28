@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Country;
 use App\Models\Region;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\CountriesExport;
 
 class CountryController extends Controller
 {
@@ -61,5 +63,9 @@ class CountryController extends Controller
         $user->delete();
 
         return redirect()->back()->with('error', 'Country Successfully Deleted');
+    }
+    public function countries_export(Request $request)
+    {
+        return Excel::download(new CountriesExport, 'countries.xlsx');
     }
 }

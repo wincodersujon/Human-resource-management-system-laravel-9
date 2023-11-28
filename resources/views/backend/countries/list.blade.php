@@ -11,6 +11,14 @@
                         <h1>Countries</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6" style="text-align: right">
+                        {{-- excel export --}}
+                        <form action="{{ url('admin/countries_export') }}" method="get">
+                            <input type="hidden" name="start_date" value="{{ Request()->start_date }}">
+                            <input type="hidden" name="end_date" value="{{ Request()->end_date }}">
+
+                            <a class="btn btn-success" href="{{ url('admin/countries_export?start_date='.Request::get('start_date').
+                            '&end_date='.Request::get('end_date')) }}">Excel Export</a>
+                        </form><br>
 
                         <a href="{{ url('admin/countries/add') }}" class="btn btn-primary"> Add Countries</a>
                     </div><!-- /.col -->
@@ -35,7 +43,7 @@
                                             <input type="text" class="form-control" name="id" value="{{ Request()->id }}"
                                                 placeholder="ID">
                                         </div>
-                                        <div class="form-group col-md-3">
+                                        <div class="form-group col-md-4">
                                             <label>Country Name</label>
                                             <input type="text" class="form-control" name="country_name" value="{{ Request()->country_name }}"
                                                 placeholder="Enter Country Name">
@@ -44,6 +52,14 @@
                                             <label>Region Name</label>
                                             <input type="text" class="form-control" name="region_name" value="{{ Request()->region_name }}"
                                                 placeholder="Enter Region Name">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label>Form Date(Start Date)</label>
+                                            <input type="date" class="form-control" name="start_date" value="{{ Request()->start_date }}">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label>End Date(End Date)</label>
+                                            <input type="date" class="form-control" name="end_date" value="{{ Request()->end_date }}">
                                         </div>
                                         <div class="form-group col-md-3">
                                             <button class="btn btn-primary" type="submit"
@@ -68,7 +84,7 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Country Name</th>
-                                            <th>Region ID</th>
+                                            <th>Region Name</th>
                                             <th>Created At</th>
                                             <th>Updated At</th>
                                             <th>Action</th>
@@ -80,8 +96,8 @@
                                                 <td>{{ $value->id }}</td>
                                                 <td>{{ $value->country_name }}</td>
                                                 <td>{{ !empty($value->get_region_name->region_name) ? $value->get_region_name->region_name : '' }}</td>
-                                                <td>{{ date('d-m-Y', strtotime($value->created_at)) }}</td>
-                                                <td>{{ date('d-m-Y', strtotime($value->updated_at)) }}</td>
+                                                <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
+                                                <td>{{ date('d-m-Y H:i A', strtotime($value->updated_at)) }}</td>
                                                 <td>
                                                     <a href="{{ url('admin/countries/edit/'.$value->id) }}"
                                                         class="btn btn-primary">Edit</a>

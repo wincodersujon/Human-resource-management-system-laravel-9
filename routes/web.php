@@ -92,5 +92,10 @@ Route::group(['middleware' => 'admin'], function(){
     Route::post('admin/countries/edit/{id}', [CountryController::class, 'update']);
     Route::get('admin/countries/delete/{id}', [CountryController::class, 'delete']);
 
+    /* I included the "maatwebsite/excel" package in the "config/app.php.
+    Within my project's "App" directory, I created an "Exports" folder and added a "CountriesExport".
+    I made some modifications to the "list.blade.php" file in the "Country" model.
+    The "User," "Country" model, and "CountryController"*/
+    Route::get('admin/countries_export', [CountryController::class, 'countries_export']);
 });
 
