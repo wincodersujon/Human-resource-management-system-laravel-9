@@ -7,6 +7,7 @@ use App\Http\Controllers\CountryController;
 use App\Http\Controllers\JobGradeController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\JobsHistoryController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\RegionController;
 use Illuminate\Support\Facades\Route;
 
@@ -97,5 +98,14 @@ Route::group(['middleware' => 'admin'], function(){
     I made some modifications to the "list.blade.php" file in the "Country" model.
     The "User," "Country" model, and "CountryController"*/
     Route::get('admin/countries_export', [CountryController::class, 'countries_export']);
+
+    //Locations
+    Route::get('admin/locations', [LocationController::class, 'index']);
+    Route::get('admin/locations/add', [LocationController::class, 'add']);
+    Route::post('admin/locations/add', [LocationController::class, 'add_post']);
+    Route::get('admin/locations/edit/{id}', [LocationController::class, 'edit']);
+    Route::post('admin/locations/edit/{id}', [LocationController::class, 'update']);
+    Route::get('admin/locations/delete/{id}', [LocationController::class, 'delete']);
+    Route::get('admin/locations_export', [LocationController::class, 'locations_export']);
 });
 

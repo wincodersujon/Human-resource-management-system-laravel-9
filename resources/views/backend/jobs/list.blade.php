@@ -25,7 +25,6 @@
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
-        {{-- @include('message') --}}
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
