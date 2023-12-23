@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\EmployeesController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\JobGradeController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\JobsHistoryController;
@@ -107,5 +108,14 @@ Route::group(['middleware' => 'admin'], function(){
     Route::post('admin/locations/edit/{id}', [LocationController::class, 'update']);
     Route::get('admin/locations/delete/{id}', [LocationController::class, 'delete']);
     Route::get('admin/locations_export', [LocationController::class, 'locations_export']);
+
+    //Departments
+    Route::get('admin/departments', [DepartmentController::class, 'index']);
+    Route::get('admin/departments/add', [DepartmentController::class, 'add']);
+    Route::post('admin/departments/add', [DepartmentController::class, 'add_post']);
+    Route::get('admin/departments/edit/{id}', [DepartmentController::class, 'edit']);
+    Route::post('admin/departments/edit/{id}', [DepartmentController::class, 'update']);
+    Route::get('admin/departments/delete/{id}', [DepartmentController::class, 'delete']);
+    Route::get('admin/departments_export', [DepartmentController::class, 'locations_export']);
 });
 
