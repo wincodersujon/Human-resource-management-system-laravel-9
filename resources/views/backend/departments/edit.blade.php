@@ -28,55 +28,41 @@
                             <div class="card-header">
                                 <h3 class="card-title">Edit Departments</h3>
                             </div>
-                            <form class="form-horizontal" method="post" action="{{ url('admin/departments/edit/'. $getRecord->id) }}"
+                            <form class="form-horizontal" method="post" action="{{ url('admin/departments/edit/'.$getRecord->id) }}"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-lable">Street Address
+                                        <label class="col-sm-2 col-form-lable">Department Name
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="street_address" value="{{ $getRecord->street_address }}"
-                                                class="form-control" required placeholder="Enter Street Address">
+                                            <input type="text" name="department_name"
+                                                value="{{ $getRecord->department_name }}" class="form-control" required
+                                                placeholder="Enter Department Name">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-lable">Postal Code
+                                        <label class="col-sm-2 col-form-lable">Manager Name(Manager ID)
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="postal_code" value="{{ $getRecord->postal_code }}"
-                                                class="form-control" required placeholder="Enter Postal Code">
+                                            <select class="form-control" name="manager_id" required>
+                                                <option {{ ($getRecord->manager_id ==1) ? 'selected' : '' }} value="1">Sujon</option>
+                                                <option {{ ($getRecord->manager_id ==2) ? 'selected' : '' }} value="2">Biswas</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-lable">City
+                                        <label class="col-sm-2 col-form-lable">Location Name(Location ID)
                                             <span style="color:red;">*</span>
                                         </label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="city" value="{{ $getRecord->city }}"
-                                                class="form-control" required placeholder="Enter City">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-2 col-form-lable">State Provice
-                                            <span style="color:red;">*</span>
-                                        </label>
-                                        <div class="col-sm-10">
-                                            <input type="text" name="state_provice" value="{{ $getRecord->state_provice }}"
-                                                class="form-control" required placeholder="Enter State Provice">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-2 col-form-lable">Countries Name(Countries ID)
-                                            <span style="color:red;">*</span>
-                                        </label>
-                                        <div class="col-sm-10">
-                                            <select class="form-control" name="countries_id" required>
-                                                @foreach ($getCountries as $country)
-                                                    <option {{ ($country->id == $getRecord->countries_id)
-                                                     ? 'selected' : '' }} value="{{ $country->id }}">{{ $country->country_name }}</option>
+                                            <select class="form-control" name="location_id" required>
+                                                @foreach ($getLocations as $location)
+                                                    <option {{ ($location->id == $getRecord->location_id) ? 'selected' : ''}} value="{{ $location->id }}">
+                                                            {{ $location->street_address }}
+                                                    </option>
                                                 @endforeach
                                             </select>
                                         </div>
