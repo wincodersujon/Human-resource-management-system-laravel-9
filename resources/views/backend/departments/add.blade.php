@@ -49,7 +49,9 @@
                                             <select class="form-control" name="manager_id" required>
                                                 <option value="">Select Manager Name</option>
                                                 <option value="1">Sujon</option>
-                                                <option value="2">Biswas</option>
+                                                <option value="2">Prince</option>
+                                                <option value="3">Hafis</option>
+                                                <option value="4">Nafisa</option>
                                                 {{-- @foreach ($getDepartments as $departments)
                                                 <option value="{{ $departments->id }}">{{ $departments->department_name }}
                                                 </option>

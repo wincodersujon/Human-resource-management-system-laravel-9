@@ -12,13 +12,13 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6" style="text-align: right">
                         {{-- excel export --}}
-                        {{-- <form action="{{ url('admin/departments_export') }}" method="get">
+                        <form action="{{ url('admin/departments_export') }}" method="get">
                             <input type="hidden" name="start_date" value="{{ Request()->start_date }}">
                             <input type="hidden" name="end_date" value="{{ Request()->end_date }}">
 
                             <a class="btn btn-success" href="{{ url('admin/departments_export?start_date='.Request::get('start_date').
                             '&end_date='.Request::get('end_date')) }}">Excel Export</a>
-                        </form><br> --}}
+                        </form><br>
 
                         <a href="{{ url('admin/departments/add') }}" class="btn btn-primary"> Add Departments</a>
                     </div><!-- /.col -->
@@ -52,6 +52,14 @@
                                             <label>Location</label>
                                             <input type="text" class="form-control" name="street_address" value="{{ Request()->street_address }}"
                                                 placeholder="Location Name">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label>Form Date(Start Date)</label>
+                                            <input type="date" class="form-control" name="start_date" value="{{ Request()->start_date }}">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label>End Date(End Date)</label>
+                                            <input type="date" class="form-control" name="end_date" value="{{ Request()->end_date }}">
                                         </div>
                                         <div class="form-group col-md-3">
                                             <button class="btn btn-primary" type="submit"
@@ -92,15 +100,17 @@
                                             <td>
                                                 @if ($value->manager_id == 1)
                                                 Sujon
-                                                @else
-                                                Biswas
+                                                @elseif ($value->manager_id == 2)
+                                                Prince
+                                                @elseif ($value->manager_id == 3)
+                                                Hafis
+                                                @elseif ($value->manager_id == 4)
+                                                Nafisa
                                                 @endif
                                             </td>
                                             <td>{{ $value->street_address }}</td>
-                                            <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}
-                                            </td>
-                                            <td>{{ date('d-m-Y H:i A', strtotime($value->updated_at)) }}
-                                            </td>
+                                            <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
+                                            <td>{{ date('d-m-Y H:i A', strtotime($value->updated_at)) }}</td>
                                             <td>
                                                 <a href="{{ url('admin/departments/edit/' . $value->id) }}"
                                                     class="btn btn-primary">Edit</a>

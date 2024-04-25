@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Department;
 use App\Models\Location;
 use Illuminate\Http\Request;
-
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\DepartmentsExport;
 class DepartmentController extends Controller
 {
     public function index(Request $request)
@@ -62,8 +63,8 @@ class DepartmentController extends Controller
 
         return redirect()->back()->with('error', 'Department Successfully Deleted');
     }
-    // public function locations_export(Request $request)
-    // {
-    //     return Excel::download(new LocationsExport, 'locations.xlsx');
-    // }
+    public function departments_export(Request $request)
+    {
+        return Excel::download(new DepartmentsExport, 'departments.xlsx');
+    }
 }

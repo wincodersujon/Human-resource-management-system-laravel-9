@@ -116,6 +116,6 @@ Route::group(['middleware' => 'admin'], function(){
     Route::get('admin/departments/edit/{id}', [DepartmentController::class, 'edit']);
     Route::post('admin/departments/edit/{id}', [DepartmentController::class, 'update']);
     Route::get('admin/departments/delete/{id}', [DepartmentController::class, 'delete']);
-    Route::get('admin/departments_export', [DepartmentController::class, 'locations_export']);
+    Route::get('admin/departments_export', [DepartmentController::class, 'departments_export']);
 });
 

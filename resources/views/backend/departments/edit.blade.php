@@ -49,7 +49,9 @@
                                         <div class="col-sm-10">
                                             <select class="form-control" name="manager_id" required>
                                                 <option {{ ($getRecord->manager_id ==1) ? 'selected' : '' }} value="1">Sujon</option>
-                                                <option {{ ($getRecord->manager_id ==2) ? 'selected' : '' }} value="2">Biswas</option>
+                                                <option {{ ($getRecord->manager_id ==2) ? 'selected' : '' }} value="2">Prince</option>
+                                                <option {{ ($getRecord->manager_id ==3) ? 'selected' : '' }} value="3">Hafis</option>
+                                                <option {{ ($getRecord->manager_id ==4) ? 'selected' : '' }} value="4">Nafisa</option>
                                             </select>
                                         </div>
                                     </div>

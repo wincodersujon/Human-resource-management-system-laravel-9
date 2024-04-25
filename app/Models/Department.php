@@ -29,6 +29,11 @@ class Department extends Model
         {
         $return = $return->where('locations.street_address','like','%' .Request::get('street_address'));
         }
+        if(!empty(Request::get('start_date')) && !empty(Request::get('end_date')))
+        {
+        $return = $return->where('departments.created_at', '>=', Request::get('start_date'))
+        ->where('departments.created_at', '<=', Request::get('end_date'));
+        }
         $return = $return->paginate(5);
         return $return;
     }
