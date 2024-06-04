@@ -9,6 +9,7 @@ use App\Http\Controllers\JobGradeController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\JobsHistoryController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\RegionController;
 use Illuminate\Support\Facades\Route;
 
@@ -118,4 +119,14 @@ Route::group(['middleware' => 'admin'], function(){
     Route::get('admin/departments/delete/{id}', [DepartmentController::class, 'delete']);
     Route::get('admin/departments_export', [DepartmentController::class, 'departments_export']);
 });
+
+ //Manager
+ Route::get('admin/managers', [ManagerController::class, 'index']);
+ Route::get('admin/managers/add', [ManagerController::class, 'add']);
+ Route::post('admin/managers/add', [ManagerController::class, 'add_post']);
+ Route::get('admin/managers/edit/{id}', [ManagerController::class, 'edit']);
+ Route::post('admin/managers/edit/{id}', [ManagerController::class, 'update']);
+ Route::get('admin/managers/delete/{id}', [ManagerController::class, 'delete']);
+ Route::get('admin/managers_export', [ManagerController::class, 'manager_export']);
+
 
